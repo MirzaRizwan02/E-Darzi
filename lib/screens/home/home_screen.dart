@@ -1,20 +1,5 @@
+import 'components/product.dart';
 import 'package:flutter/material.dart';
-import '../../components/coustom_bottom_nav_bar.dart';
-import '../../enums.dart';
-import '../../screens/measurement/measurement.dart';
-//
-// import 'components/body.dart';
-//
-// class HomeScreen extends StatelessWidget {
-//   static String routeName = "/HomeScreen";
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Body(),
-//       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
-//     );
-//   }
-// }
 
 import 'package:flutter/material.dart';
 
@@ -106,13 +91,21 @@ class HomeScreen extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  ProductCard(imageUrl: 'assets/images/Product1.png'),
+                  GestureDetector(
+                    onTap: () {
+                      // Handle product card tap
+                      Navigator.pushNamed(context, ProductPage.routeName);
+                    },
+                    child: ProductCard(imageUrl: 'assets/images/Product1.png'),
+                  ),
                   ProductCard(imageUrl: 'assets/images/Product2.png'),
                   ProductCard(imageUrl: 'assets/images/Product3.png'),
                   ProductCard(imageUrl: 'assets/images/Product4.png'),
                 ],
               ),
             ),
+            // ...
+
             SizedBox(height: 16),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
@@ -127,44 +120,143 @@ class HomeScreen extends StatelessWidget {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               children: [
-                Container(
-                  margin: EdgeInsets.all(8),
-                  color: Colors.grey[300],
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(8),
-                  //   image: DecorationImage(
-                  //     image: AssetImage('assets/images/Collection/ideas Logo.png'),
-                  //     fit: BoxFit.cover,
-                  //   ),
-                  // ),
-                  child: Center(
-                    child: Text('Collection 1'),
+                GestureDetector(
+                  onTap: () {
+                    // Handle collection item tap
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.grey[100],
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 6,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/Collection/Ideas Logo.png',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.contain,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.all(8),
-                  color: Colors.grey[300],
-                  child: Center(
-                    child: Text('Collection 2'),
+
+                GestureDetector(
+                  onTap: () {
+                    // Handle collection item tap
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.grey[100],
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 6,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/Collection/Khaadi Logo.png',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.contain,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.all(8),
-                  color: Colors.grey[300],
-                  child: Center(
-                    child: Text('Collection 2'),
+
+                GestureDetector(
+                  onTap: () {
+                    // Handle collection item tap
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.grey[100],
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/Collection/Khaadi Logo.png',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.contain,
+
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.all(8),
-                  color: Colors.grey[300],
-                  child: Center(
-                    child: Text('Collection 2'),
+
+                GestureDetector(
+                  onTap: () {
+                    // Handle collection item tap
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.grey[100],
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/Collection/Ideas Logo.png',
+                            width: 150,
+                            height: 150,
+                            fit: BoxFit.contain,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                // Add more collection items as needed
               ],
             ),
+
+// ...
+
           ],
         ),
       ),
