@@ -94,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       // Handle product card tap
-                      Navigator.pushNamed(context, ProductPage.routeName);
+                      Navigator.pushNamed(context, Product.routeName);
                     },
                     child: ProductCard(imageUrl: 'assets/images/Product1.png'),
                   ),
