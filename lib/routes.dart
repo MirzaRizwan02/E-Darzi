@@ -5,6 +5,8 @@ import 'screens/splash/splash_screen.dart';
 import 'screens/otp/otp_screen.dart';
 import 'screens/measurement/measurement.dart';
 import 'screens/measurement/components/Manual.dart';
+import 'screens/home/home_screen.dart';
+import 'screens/home/components/product.dart';
 
 
 
@@ -18,6 +20,9 @@ final Map<String, WidgetBuilder> routes = {
   OtpScreen.routeName:(context) => OtpScreen(),
   measurement.routeName:(context) => measurement(),
   manual.routeName:(context) => manual(),
+  HomeScreen.routeName:(context) => HomeScreen(),
+  Product.routeName:(context) => Product(),
+
 
 };
 // TODO Implement this library.

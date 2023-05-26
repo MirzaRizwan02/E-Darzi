@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 import '../../../components/default_button.dart';
 import '../../measurement/measurement.dart';
+import '../../home/home_screen.dart';
 
 class manual extends StatelessWidget {
   static String routeName = "/manual";
@@ -147,7 +148,7 @@ class _ManualPageState extends State<ManualPage> {
               DefaultButton(
                   text: "Confirm",
                   press: () {
-                    Navigator.pushNamed(context, measurement.routeName);
+                    Navigator.pushNamed(context, HomeScreen.routeName);
                   }
               )
             ],
