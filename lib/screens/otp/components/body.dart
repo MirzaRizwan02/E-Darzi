@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(width: 50.0,height: SizeConfig.screenHeight * 0.02),
-              Image.asset('assets/images/Button.png'),
+              Image.asset('assets/images/logo-01.png'),
               SizedBox(height: SizeConfig.screenHeight * 0.01),
               Text(
                 "Please enter the one time password sent to your registered email/Phone Number",

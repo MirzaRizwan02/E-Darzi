@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'size_config.dart';
 
 const kPrimaryColor = Color(0xFF774AC7);
-const kPrimaryLightColor = Color(0xFFFDFDFE);
+const kPrimaryLightColor = Color(0xFFF3E3FF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
@@ -31,7 +31,7 @@ const String kPassNullError = "Please Enter your password";
 const String kShortPassError = "Password is too short";
 const String kMatchPassError = "Passwords don't match";
 const String kNamelNullError = "Please Enter your name";
-const String kPhoneNumberNullError = "or phone number";
+const String kPhoneNumberNullError = "Please Enter your phone number";
 final RegExp phoneValidatorRegExp =
     RegExp("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}");
 const String kInvalidPhoneError = "Please Enter Correct Phone Number";

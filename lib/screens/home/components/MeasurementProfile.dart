@@ -1,33 +1,103 @@
-import '../../../screens/home/components/MeasurementProfile.dart';
 import 'package:flutter/material.dart';
-import '../components/MeasurementPopup.dart';
 
-// void main() => runApp(ProductPage());
+// void main() => runApp(Product());
 
-class Product extends StatelessWidget {
-  static String routeName = "/ProductPage";
+class Measurement extends StatelessWidget {
+  static String routeName = "/MeasurementPage";
+
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
-
-        body: ProductPage(),
-      );
-
+    return Scaffold(
+      body: MeasurementPage(),
+    );
   }
 }
 
-class ProductPage extends StatefulWidget {
+class MeasurementPage extends StatefulWidget {
   @override
-  _ProductPageState createState() => _ProductPageState();
+  _MeasurementPageState createState() => _MeasurementPageState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _MeasurementPageState extends State<MeasurementPage> {
   final _formKey = GlobalKey<FormState>();
+  bool _isAddToCartTapped = false;
+  bool _showProfileSelection = false;
+  String _selectedProfile = '';
+
+  void _showProfileSelectionDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Select Measurement Profile'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                title: Text('Profile 1'),
+                leading: Radio<String>(
+                  value: 'Profile 1',
+                  groupValue: _selectedProfile,
+                  onChanged: (String? value) {
+                    setState(() {
+                      _selectedProfile = value!;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: Text('Profile 2'),
+                leading: Radio<String>(
+                  value: 'Profile 2',
+                  groupValue: _selectedProfile,
+                  onChanged: (String? value) {
+                    setState(() {
+                      _selectedProfile = value!;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: Text('Profile 3'),
+                leading: Radio<String>(
+                  value: 'Profile 3',
+                  groupValue: _selectedProfile,
+                  onChanged: (String? value) {
+                    setState(() {
+                      _selectedProfile = value!;
+                    });
+                  },
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                // Handle adding a new measurement profile
+                // Example: Navigate to the add profile screen
+                Navigator.pop(context);
+              },
+              child: Text('Add New Profile'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _showProfileSelection = false;
+                });
+                Navigator.pop(context);
+              },
+              child: Text('Select'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-
-      ),
+      appBar: AppBar(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,6 +106,7 @@ class _ProductPageState extends State<ProductPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // ...existing code...
                   Container(
                     margin: EdgeInsets.all(10),
                     child: Column(
@@ -242,13 +313,10 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                   ),
 
-                  // Trouser Length
-
                   SizedBox(height: 12),
                   Container(
                     width: double.infinity,
                     padding: EdgeInsets.all(12),
-
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -267,52 +335,10 @@ class _ProductPageState extends State<ProductPage> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: StyleCard(
-                            imageUrl: 'assets/images/NeckStyle/style1.png',
-                            onTap: () {
-                              // Handle style preset tap
-                              // Example: Apply style preset 3
-                            },
-                          ),
-                        ),
-
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: StyleCard(
-                            imageUrl: 'assets/images/NeckStyle/style2.png',
-                            onTap: () {
-                              // Handle style preset tap
-                              // Example: Apply style preset 3
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: StyleCard(
-                            imageUrl: 'assets/images/NeckStyle/style3.png',
-                            onTap: () {
-                              // Handle style preset tap
-                              // Example: Apply style preset 3
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: StyleCard(
-                            imageUrl: 'assets/images/NeckStyle/style4.png',
-                            onTap: () {
-                              // Handle style preset tap
-                              // Example: Apply style preset 3
-                            },
-                          ),
-                        ),
-
+                        // ...existing code...
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),
@@ -342,7 +368,10 @@ class _ProductPageState extends State<ProductPage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, MeasurementPopup.routeName);
+                    setState(() {
+                      _isAddToCartTapped = true;
+                      _showProfileSelection = true;
+                    });
                   },
                   child: Text('Add to Cart'),
                 ),
@@ -351,10 +380,8 @@ class _ProductPageState extends State<ProductPage> {
           ),
         ],
       ),
-
     );
   }
-
 }
 
 class StyleCard extends StatelessWidget {
@@ -369,8 +396,8 @@ class StyleCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: EdgeInsets.all(8),
-        width: 50,
-        height: 50,
+        width: 80,
+        height: 80,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           image: DecorationImage(

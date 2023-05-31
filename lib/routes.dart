@@ -7,7 +7,8 @@ import 'screens/measurement/measurement.dart';
 import 'screens/measurement/components/Manual.dart';
 import 'screens/home/home_screen.dart';
 import 'screens/home/components/product.dart';
-
+import 'screens/home/components/MeasurementProfile.dart';
+import 'screens/home/components/MeasurementPopup.dart';
 
 
 
@@ -22,7 +23,8 @@ final Map<String, WidgetBuilder> routes = {
   manual.routeName:(context) => manual(),
   HomeScreen.routeName:(context) => HomeScreen(),
   Product.routeName:(context) => Product(),
-
+  Measurement.routeName:(context) => Measurement(),
+  MeasurementPopup.routeName:(context) => MeasurementPopup(),
 
 };
 // TODO Implement this library.

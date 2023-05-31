@@ -40,25 +40,25 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(0.02)),
           // buildPasswordFormField(),
           // SizedBox(height: getProportionateScreenHeight(30)),
-          // Row(
-          //   children: [
-          //     Checkbox(
-          //       value: remember,
-          //       activeColor: kPrimaryColor,
-          //       onChanged: (value) {
-          //         setState(() {
-          //           remember = value;
-          //         });
-          //       },
-          //     ),
-          //     Text("Remember me"),
-          //     Spacer(),
-          //
-          //   ],
-          // ),
+          Row(
+            children: [
+              Checkbox(
+                value: remember,
+                activeColor: kPrimaryColor,
+                onChanged: (value) {
+                  setState(() {
+                    remember = value;
+                  });
+                },
+              ),
+              Text("Remember me"),
+              Spacer(),
+
+            ],
+          ),
           FormError(errors: errors),
 
-          SizedBox(height: getProportionateScreenHeight(40)),
+          SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
 
             text: "Continue",

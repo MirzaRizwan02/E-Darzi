@@ -40,7 +40,7 @@ class _MeasurePageState extends State<MeasurePage> {
           child: Column(
             children: [
               SizedBox(width: 50.0,height: SizeConfig.screenHeight * 0.011),
-              Image.asset('assets/images/Button.png'),
+              Image.asset('assets/images/logo-01.png'),
 
               SizedBox(height: SizeConfig.screenHeight * 0.01),
               Text(
@@ -48,7 +48,7 @@ class _MeasurePageState extends State<MeasurePage> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: getProportionateScreenWidth(18),
+                  fontSize: getProportionateScreenWidth(17),
                   fontWeight: FontWeight.w500,
                 ),
 
@@ -78,7 +78,7 @@ class _MeasurePageState extends State<MeasurePage> {
                 ),
               ),
 
-              SizedBox(height: getProportionateScreenHeight(80)),
+              SizedBox(height: getProportionateScreenHeight(20)),
               DefaultButton(
 
                   text: "I will do it later",

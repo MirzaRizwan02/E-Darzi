@@ -35,10 +35,10 @@ class Body extends StatelessWidget {
               //
               // ],
               children: [
-                SizedBox(width: 50.0,height: SizeConfig.screenHeight * 0.04),
-                Image.asset('assets/images/Button.png'),
+                SizedBox(width: 50.0,height: SizeConfig.screenHeight * 0.02),
+                Image.asset('assets/images/logo-01.png'),
 
-                SizedBox(height: SizeConfig.screenHeight * 0.01),
+                SizedBox(height: SizeConfig.screenHeight * 0.03),
                 Text(
                   "Welcome Back !",
                   style: TextStyle(
