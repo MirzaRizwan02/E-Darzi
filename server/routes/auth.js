@@ -8,11 +8,18 @@ authRouter.post("/api/signup", async (req, res) => {
   try {
     const { name, email, phone } = req.body;
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
+    const existingPhone = await User.findOne({ phone });
+    const existingEmail = await User.findOne({ email });
+
+    if (existingEmail) {
       return res
         .status(400)
         .json({ msg: "User with same email already exists!" });
+    }
+    if (existingPhone) {
+      return res
+        .status(400)
+        .json({ msg:"User with same Phone Number already exists!" });
     }
 
     let user = new User({
@@ -20,6 +27,7 @@ authRouter.post("/api/signup", async (req, res) => {
       email,
       phone,
     });
+
     user = await user.save();
     res.json(user);
   } catch (e) {
@@ -29,21 +37,22 @@ authRouter.post("/api/signup", async (req, res) => {
 
 // Sign In Route
 // Exercise
-authRouter.post("/api/signin", async (req, res) => {
-  try {
-    const { number } = req.body;
 
-    const user = await User.findOne({ number });
-    if (!user) {
-      return res
-        .status(400)
-        .json({ msg: "User with this email does not exist!" });
-    }
-
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
-});
+//authRouter.post("/api/signin", async (req, res) => {
+//  try {
+//    const { number } = req.body;
+//
+//    const user = await User.findOne({ number });
+//    if (!user) {
+//      return res
+//        .status(400)
+//        .json({ msg: "User with this email does not exist!" });
+//    }
+//
+//  } catch (e) {
+//    res.status(500).json({ error: e.message });
+//  }
+//});
 
 // authRouter.post("/tokenIsValid", async (req, res) => {
 //   try {
