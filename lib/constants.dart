@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'size_config.dart';
 
+// String uri = 'http://172.24.208.1:3000';
+
+
 const kPrimaryColor = Color(0xFF774AC7);
 const kPrimaryLightColor = Color(0xFFF3E3FF);
 const kPrimaryGradientColor = LinearGradient(
