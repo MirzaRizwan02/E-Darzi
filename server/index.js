@@ -29,7 +29,6 @@ const connection = mysql.createConnection({
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-//
 connection.connect((error) => {
   if (error) {
     console.error("Database connection error: ", error);
@@ -49,6 +48,8 @@ authRouter.post('/signup', async (req, res) => {
 
   const token = jwt.sign({ email: email }, 'your-secret-key');
 
+
+// NODE MAILER TO GET SIGNUP CONFIRMATION
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
