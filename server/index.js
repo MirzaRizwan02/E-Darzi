@@ -54,7 +54,7 @@ authRouter.post('/signup', async (req, res) => {
     service: 'gmail',
     auth: {
       user: 'Your Gmail email address',
-      pass: '189417432raffay',
+      pass: 'Your Gmail password',
     },
   });
 
