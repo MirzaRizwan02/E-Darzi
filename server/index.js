@@ -50,6 +50,7 @@ authRouter.post('/signup', async (req, res) => {
 
 
 // NODE MAILER TO GET SIGNUP CONFIRMATION
+// Required your gmail credentials and have to give permission through gmail security
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
