@@ -53,7 +53,7 @@ authRouter.post('/signup', async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'abdul.18277@iqra.edu.pk',
+      user: 'Your Gmail email address',
       pass: '189417432raffay',
     },
   });
