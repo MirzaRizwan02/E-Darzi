@@ -20,10 +20,10 @@ const app = express();
 // CONNECTION 
 
 const connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
+  host: "127.0.0.1", // As hosted on localhost
+  user: "root", 
   password: "",
-  database: "e-darzi"
+  database: "Your Database Name"
 });
 
 app.use(bodyparser.urlencoded({ extended: false }));
