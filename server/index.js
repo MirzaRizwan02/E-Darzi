@@ -18,7 +18,6 @@ const app = express();
 
 
 // CONNECTION 
-
 const connection = mysql.createConnection({
   host: "127.0.0.1", // As hosted on localhost
   user: "root", 
@@ -39,7 +38,6 @@ connection.connect((error) => {
 });
 
 
-
 const authRouter = express.Router();
 
 // SIGNUP API
@@ -54,13 +52,13 @@ authRouter.post('/signup', async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'Your Gmail email address',
-      pass: 'Your Gmail password',
+      user: 'Your gmail email address',
+      pass: 'Your gmail password',
     },
   });
 
   const mailOptions = {
-      from: 'Your Gmail email address',
+      from: 'Your gmail email address',
       to: email,
       subject: 'Welcome to E DARZI',
       text: `Dear ${name},\n\nWelcome to E DARZI ! Thank you for Signing up. We are excited to have you on board.\n\nBest regards,\n E DARZI `,
