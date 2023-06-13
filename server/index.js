@@ -60,7 +60,7 @@ authRouter.post('/signup', async (req, res) => {
   });
 
   const mailOptions = {
-      from: 'abdul.18277@iqra.edu.pk',
+      from: 'Your Gmail email address',
       to: email,
       subject: 'Welcome to E DARZI',
       text: `Dear ${name},\n\nWelcome to E DARZI ! Thank you for Signing up. We are excited to have you on board.\n\nBest regards,\n E DARZI `,
